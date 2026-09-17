@@ -98,7 +98,7 @@ cd ../frontend && flutter pub get && flutter run
 | Setting | Configuration |
 |---|---|
 | Default branch | `main` |
-| Branch protection | `main` requires a pull request, 1 approving review, and passing CI before merge; force-push and deletion blocked |
+| Branch protection | `main` requires a pull request with 1 approving review. Force pushes and branch deletion are blocked. Admin bypass is left on so a solo maintainer can merge their own work |
 | Working branches | `develop`, `feature/*`, `fix/*` |
 | CI/CD | GitHub Actions runs lint, test and build on every push and pull request |
 | Secrets | Stored as GitHub Actions secrets; `.env` is git-ignored |
