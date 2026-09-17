@@ -65,7 +65,7 @@ fitflow-redesign/
 ## Getting Started
 
 ```bash
-git clone https://github.com/<your-username>/fitflow-redesign.git
+git clone https://github.com/kkajaluxsan/fitflow-redesign.git
 cd fitflow-redesign
 cp .env.example .env
 
