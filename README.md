@@ -3,8 +3,8 @@
 Technology evaluation, architecture and project scaffold for the **FitFlow** fitness application
 redesign, prepared for IT3060 Human Computer Interaction, Lab Exercise 05.
 
-FitFlow is being rebuilt around five research-driven priorities: AI-powered adaptive workout
-plans, camera-based nutrition logging, a short (max 5 question) onboarding, user-controlled
+FitFlow is being rebuilt around five research driven priorities: AI powered adaptive workout
+plans, camera based nutrition logging, a short (max 5 question) onboarding, user controlled
 privacy, and rich progress visualisation, delivered as one seamless iOS / Android / Web
 experience.
 
@@ -14,16 +14,16 @@ experience.
 
 | Layer | Technology | Why |
 |---|---|---|
-| Mobile client | **Flutter 3.x (Dart)** | One codebase for iOS and Android. Impeller and Skia rendering hold the data-heavy Variant 3 UI at 60 to 120 fps |
-| Web client | **Next.js 15 (React + TypeScript)** | SEO-indexable marketing and companion dashboard; avoids Flutter Web's large initial payload |
+| Mobile client | **Flutter 3.x (Dart)** | One codebase for iOS and Android. Impeller and Skia rendering hold the data heavy Variant 3 UI at 60 to 120 fps |
+| Web client | **Next.js 15 (React + TypeScript)** | SEO indexable marketing and companion dashboard; avoids Flutter Web's large initial payload |
 | Shared design system | **Figma tokens → Flutter + Tailwind** | Single source of truth for the selected Variant 3 visual language |
-| Core API | **NestJS (Node.js + TypeScript)** | Modular DI architecture, first-class WebSocket/Socket.IO support, large hiring pool |
-| AI microservice | **Python 3.12 + FastAPI** | Native access to PyTorch / Hugging Face for the workout planner and food-vision models |
-| Primary database | **PostgreSQL 16 (AWS RDS Multi-AZ)** | Relational integrity for health records, window functions for progress trends, row-level security |
-| Time-series metrics | **TimescaleDB extension** | Efficient storage/roll-up of steps, weight, heart-rate and hydration series |
-| Cache + real-time bus | **Redis 7 (ElastiCache)** | Feed caching, leaderboard sorted-sets, Socket.IO pub/sub adapter |
+| Core API | **NestJS (Node.js + TypeScript)** | Modular DI architecture, native WebSocket/Socket.IO support, large hiring pool |
+| AI microservice | **Python 3.12 + FastAPI** | Native access to PyTorch / Hugging Face for the workout planner and food vision models |
+| Primary database | **PostgreSQL 16 (AWS RDS Multi-AZ)** | Relational integrity for health records, window functions for progress trends, row level security |
+| Time series metrics | **TimescaleDB extension** | Efficient storage/rollup of steps, weight, heart rate and hydration series |
+| Cache + real time bus | **Redis 7 (ElastiCache)** | Feed caching, leaderboard sorted sets, Socket.IO pub/sub adapter |
 | Object storage | **Amazon S3 + CloudFront** | Meal photos, exercise videos, avatars; presigned direct uploads |
-| Authentication | **Auth0 (OIDC / JWT)** | MFA, social + passwordless login, RBAC, SOC 2 Type II, GDPR DPA, HIPAA-ready tier |
+| Authentication | **Auth0 (OIDC / JWT)** | MFA, social + passwordless login, RBAC, SOC 2 Type II, GDPR DPA, HIPAA ready tier |
 | Async messaging | **Amazon SQS + EventBridge** | Decouples workout/nutrition events from analytics and achievement processing |
 | Containers / hosting | **Docker + AWS ECS Fargate** | Independent scaling of API and AI workloads without cluster maintenance |
 | Observability | **OpenTelemetry + CloudWatch + Sentry** | Distributed tracing and crash reporting across all services |
@@ -52,7 +52,7 @@ fitflow-redesign/
 ├── docs/                        # Lab 05 deliverables
 │   ├── tech-stack.md            # Technology summary and justification
 │   ├── comparison-matrix.md     # Weighted decision matrices (Activities 1 to 3)
-│   ├── architecture.md          # High-level architecture and data flows (Activity 4)
+│   ├── architecture.md          # High level architecture and data flows (Activity 4)
 │   ├── adr/                     # Architecture Decision Records
 │   └── diagrams/                # Architecture and data-flow diagrams
 ├── .env.example
@@ -85,11 +85,11 @@ cd ../frontend && flutter pub get && flutter run
 
 | Document | Contents |
 |---|---|
-| [docs/tech-stack.md](docs/tech-stack.md) | Chosen stack, per-layer rationale, rejected alternatives |
+| [docs/tech-stack.md](docs/tech-stack.md) | Chosen stack, rationale for each layer, rejected alternatives |
 | [docs/comparison-matrix.md](docs/comparison-matrix.md) | Frontend, backend, database, auth and consolidated weighted matrices |
 | [docs/architecture.md](docs/architecture.md) | Components, data flows, security, scalability, integrations |
 | [docs/adr/ADR-001-technology-stack.md](docs/adr/ADR-001-technology-stack.md) | Architecture Decision Record for the stack selection |
-| [docs/diagrams/](docs/diagrams/) | High-level architecture and nutrition data-flow diagrams |
+| [docs/diagrams/](docs/diagrams/) | High level architecture and nutrition data-flow diagrams |
 
 ---
 
@@ -101,14 +101,14 @@ cd ../frontend && flutter pub get && flutter run
 | Branch protection | `main` requires a pull request with 1 approving review. Force pushes and branch deletion are blocked. Admin bypass is left on so a solo maintainer can merge their own work |
 | Working branches | `develop`, `feature/*`, `fix/*` |
 | CI/CD | GitHub Actions runs lint, test and build on every push and pull request |
-| Secrets | Stored as GitHub Actions secrets; `.env` is git-ignored |
+| Secrets | Stored as GitHub Actions secrets; `.env` is ignored by git |
 
 ---
 
 ## Contributing
 
-1. Branch from `develop`: `git checkout -b feature/<short-name>`
-2. Commit using Conventional Commits (`feat:`, `fix:`, `docs:`, `chore:`)
+1. Branch from `develop`: `git checkout -b feature/yourname`
+2. Write a short commit message in plain lowercase saying what changed
 3. Open a pull request into `develop`; CI must pass and one review is required
 4. `develop` is merged into `main` for each release
 

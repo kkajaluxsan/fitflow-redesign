@@ -1,6 +1,6 @@
 # FitFlow AI Service
 
-Python 3.12 + FastAPI microservice for all machine-learning inference.
+Python 3.12 + FastAPI microservice for all machine learning inference.
 
 ## Endpoints
 | Endpoint | Purpose |
@@ -8,7 +8,7 @@ Python 3.12 + FastAPI microservice for all machine-learning inference.
 | `POST /infer/plan` | Adaptive workout plan from session history, goals and injury constraints |
 | `POST /infer/food` | Food recognition and portion estimation from a meal photo |
 | `POST /feedback` | Stores user corrections as labelled training data |
-| `GET /health` | Liveness and model-version probe |
+| `GET /health` | Liveness and model version probe |
 
 ## Structure
 ```
@@ -18,7 +18,7 @@ ai-service/
 │   ├── routers/      # Endpoint definitions
 │   ├── services/     # Plan engine, food vision, feature store client
 │   └── schemas/      # Pydantic request/response models
-└── models/           # Model artefacts (git-ignored) and training notebooks
+└── models/           # Model artefacts (ignored by git) and training notebooks
 ```
 
 ## Commands

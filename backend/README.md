@@ -7,11 +7,11 @@ NestJS (Node.js + TypeScript) REST and WebSocket API.
 |---|---|
 | `identity` | Auth0 token validation, profile, onboarding answers, consent |
 | `workout` | Plans, sessions, sets/reps, AI plan orchestration |
-| `nutrition` | Meal logs, macros, food lookup, photo-log reconciliation |
+| `nutrition` | Meal logs, macros, food lookup, photo log reconciliation |
 | `social` | Groups, feed, posts, likes, comments, challenges |
 | `progress` | Trends, streaks, achievements, milestone evaluation |
-| `notification` | Push via FCM/APNs, in-app messages |
-| `privacy` | Per-field sharing settings, GDPR export and erasure |
+| `notification` | Push via FCM/APNs, in app messages |
+| `privacy` | Per field sharing settings, GDPR export and erasure |
 
 ## Commands
 ```bash
